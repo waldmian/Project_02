@@ -1,10 +1,3 @@
-"""
-projekt_2.py: druhý projekt do Engeto Online Python Akademie
-
-author: Anna Waldhansová
-email: annaw@email.cz
-"""
-
 import random
 import os
 import sys
@@ -18,8 +11,8 @@ def print_initial_greeting():
     print(separator)
     print("I've generated a random 4-digit number for you.\nLet's play!")
     print(separator)
-
-
+    
+    
 def secret_number():
     """Generates a random 4-digit secret number."""
     
@@ -28,7 +21,6 @@ def secret_number():
 
 def user_guess():
     """Prompts the user to enter a 4-digit guess.""" 
-    
     separator = '-' * 47
     return str(input(f"Enter a 4-digit number: \n{separator}\n>>> "))
 
@@ -99,7 +91,8 @@ def all_game():
     
     separator = '-' * 47
     game_on = True
-    number = secret_number()    
+    number = secret_number()
+    print(f"[DEBUG] Secret number is: {number}")
     attempts = 0
     
     while game_on:
@@ -109,8 +102,8 @@ def all_game():
             sys.exit()
         elif len(guessing) != 4 or not guessing.isdigit():
             os.system('cls')
-            print("Invalid input. Please enter a 4-digit number,", 
-                  "\n(or press 'q' to quit).")
+            print("Invalid input. Please enter a 4-digit number", 
+                  "\n(nor press 'q' to quit).")
             continue
         attempts += 1
 

@@ -1,23 +1,6 @@
-"""
-projekt_2.py: druhý projekt do Engeto Online Python Akademie
-
-author: Anna Waldhansová
-email: annaw@email.cz
-"""
-
 import random
 import os
 import sys
-
-
-def print_initial_greeting():
-    """Prints initial greeting."""
-    
-    separator = '-' * 47
-    print("Hi and welcome to the Bulls and Cows Game!")
-    print(separator)
-    print("I've generated a random 4-digit number for you.\nLet's play!")
-    print(separator)
 
 
 def secret_number():
@@ -29,7 +12,7 @@ def secret_number():
 def user_guess():
     """Prompts the user to enter a 4-digit guess.""" 
     
-    separator = '-' * 47
+    separator = '-' * 40
     return str(input(f"Enter a 4-digit number: \n{separator}\n>>> "))
 
 
@@ -71,9 +54,9 @@ def print_results(bulls, cows):
 def print_winning_message(attempts):
     """Prints a congratulatory message when the user wins."""
     
-    separator = '-' * 47
+    separator = '-' * 40
     attempts_text = "attempt" if attempts == 1 else "attempts"
-    print(f"Congratulations! \nYou guessed the right number in", 
+    print(f"Congratulations! You guessed the right number in", 
         f"{attempts} {attempts_text}!")
     print(separator)
     
@@ -97,7 +80,7 @@ def play_again():
 def all_game():
     """Main game loop that runs the Bulls and Cows game."""
     
-    separator = '-' * 47
+    separator = '-' * 40
     game_on = True
     number = secret_number()    
     attempts = 0
@@ -109,8 +92,8 @@ def all_game():
             sys.exit()
         elif len(guessing) != 4 or not guessing.isdigit():
             os.system('cls')
-            print("Invalid input. Please enter a 4-digit number,", 
-                  "\n(or press 'q' to quit).")
+            print("Invalid input. Please enter a 4-digit number", 
+                  "(or press 'q' to quit).")
             continue
         attempts += 1
 
@@ -129,5 +112,4 @@ def all_game():
             break
 
 if __name__ == "__main__":
-    print_initial_greeting()
     all_game()
