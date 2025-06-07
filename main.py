@@ -10,7 +10,7 @@ import os
 import sys
 
 
-def print_initial_greeting():
+def print_initial_greeting() -> None:
     """Prints initial greeting."""
     
     separator = '-' * 47
