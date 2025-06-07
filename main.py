@@ -30,11 +30,29 @@ def secret_number() -> str:
     return first_digit + ''.join(remaining_digits)
 
 
-def user_guess():
-    """Prompts the user to enter a 4-digit guess.""" 
+def user_guess() -> str:
+    """Prompts the user to enter a valid 4-digit guess. 
+    The guess must not start with 0 and must only contain unique digits.
+    If the user enters 'q', the game will quit.
+    """
     
     separator = '-' * 47
-    return str(input(f"Enter a 4-digit number: \n{separator}\n>>> "))
+    while True:
+        guess = input(f"Enter a 4-digit number: \n{separator}\n>>> ")
+        if guess.lower() == "q":
+            return guess
+        if (
+            len(guess) != 4
+            or not guess.isdigit()
+            or guess[0] == '0'
+            or len(set(guess)) != 4
+        ):
+            print("Invalid input.",
+                "\nPlease enter a 4-digit number with unique digits,",
+                "that does not start with 0.", 
+                "\n(Or enter 'q' to quit).")
+            continue
+    return guess
 
 
 def calculate_bulls(secret_number, guess):
