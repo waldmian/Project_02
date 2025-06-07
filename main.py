@@ -139,7 +139,7 @@ def all_game() -> None:
         elif len(guessing) != 4 or not guessing.isdigit():
             clear_screen()
             print("Invalid input. Please enter a 4-digit number,", 
-                  "\n(or press 'q' to quit).")
+                "\n(or press 'q' to quit).")
             continue
         attempts += 1
 
