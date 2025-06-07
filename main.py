@@ -121,6 +121,7 @@ def play_again() -> None:
             sys.exit()
         else:
             print("Invalid input. Please type only 'y' or 'n'.")
+            
 
 def all_game() -> None:
     """Main game loop that runs the Bulls and Cows game."""
