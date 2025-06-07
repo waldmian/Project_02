@@ -52,7 +52,7 @@ def user_guess() -> str:
                 "that does not start with 0.", 
                 "\n(Or enter 'q' to quit).")
             continue
-    return guess
+        return guess
 
 
 def calculate_bulls(secret_number: str, guess: str) -> int:
