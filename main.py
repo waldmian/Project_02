@@ -20,10 +20,14 @@ def print_initial_greeting() -> None:
     print(separator)
 
 
-def secret_number():
-    """Generates a random 4-digit secret number."""
+def secret_number() -> str:
+    """Generates a random 4-digit secret number with unique digits.
+    The first digit is not zero."""
     
-    return str(random.randint(1000, 9999))
+    digits = [str(d) for d in range(10)]
+    first_digit = random.choice(digits[1:])
+    remaining_digits = random.sample([d for d in digits if d != first_digit], 3)
+    return first_digit + ''.join(remaining_digits)
 
 
 def user_guess():
