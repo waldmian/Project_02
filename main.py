@@ -48,7 +48,7 @@ def user_guess() -> str:
             or len(set(guess)) != 4
         ):
             print("Invalid input.",
-                "\nPlease enter a 4-digit number with unique digits ",
+                "\nPlease enter a 4-digit number with unique digits",
                 "that does not start with 0.", 
                 "\n(Or enter 'q' to quit).")
             continue
