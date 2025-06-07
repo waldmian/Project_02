@@ -88,7 +88,13 @@ def print_results(bulls, cows):
     bulls_text = "bull" if bulls == 1 else "bulls"
     cows_text = "cow" if cows == 1 else "cows"
     print(f"{bulls} {bulls_text}, {cows} {cows_text}")
+
+
+def clear_screen() -> None:
+    """Clears the console screen on both Windows 
+    and Unix-like systems."""
     
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def print_winning_message(attempts):
     """Prints a congratulatory message when the user wins."""
@@ -107,7 +113,7 @@ def play_again():
     while True:
         replay = input("Play again: (y/n)? ").lower()
         if replay == 'y':
-            os.system('cls')
+            clear_screen()
             all_game()
             break
         elif replay == 'n':
@@ -130,7 +136,7 @@ def all_game():
             print('quitting the game')
             sys.exit()
         elif len(guessing) != 4 or not guessing.isdigit():
-            os.system('cls')
+            clear_screen()
             print("Invalid input. Please enter a 4-digit number,", 
                   "\n(or press 'q' to quit).")
             continue
