@@ -147,9 +147,9 @@ def all_game() -> None:
         bulls = calculate_bulls(number, guessing)
         cows = calculate_cows(number, guessing)
 
-        print_results(nr_bulls, nr_cows)
+        print_results(bulls, cows)
 
-        if nr_bulls == 4:
+        if bulls == 4:
             print_winning_message(attempts)
             play_again()
             break
