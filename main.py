@@ -140,9 +140,6 @@ def all_game():
         bulls = calculate_bulls(number, guessing)
         cows = calculate_cows(number, guessing)
 
-        nr_bulls = bulls
-        nr_cows = cows
-
         print_results(nr_bulls, nr_cows)
 
         if nr_bulls == 4:
