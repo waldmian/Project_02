@@ -55,7 +55,7 @@ def user_guess() -> str:
     return guess
 
 
-def calculate_bulls(secret_number, guess):
+def calculate_bulls(secret_number: str, guess: str) -> int:
     """Calculates the number of bulls for user's guess."""
     
     bulls = 0
@@ -65,7 +65,7 @@ def calculate_bulls(secret_number, guess):
     return bulls
 
 
-def calculate_cows(secret_number, guess):
+def calculate_cows(secret_number: str, guess: str) -> int:
     """Calculates the number of cows for user's guess."""
     
     cows = 0
@@ -82,7 +82,7 @@ def calculate_cows(secret_number, guess):
     return cows
 
 
-def print_results(bulls, cows):
+def print_results(bulls: int, cows: int) -> None:
     """Prints the results of user's guess."""
     
     bulls_text = "bull" if bulls == 1 else "bulls"
@@ -96,7 +96,7 @@ def clear_screen() -> None:
     
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def print_winning_message(attempts):
+def print_winning_message(attempts: int) -> None:
     """Prints a congratulatory message when the user wins."""
     
     separator = '-' * 47
@@ -106,7 +106,7 @@ def print_winning_message(attempts):
     print(separator)
     
 
-def play_again():
+def play_again() -> None:
     """Asks the user if they want to play again and
     either restarts the game or ends it."""
     
@@ -122,7 +122,7 @@ def play_again():
         else:
             print("Invalid input. Please type only 'y' or 'n'.")
 
-def all_game():
+def all_game() -> None:
     """Main game loop that runs the Bulls and Cows game."""
     
     separator = '-' * 47
